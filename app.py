@@ -5,6 +5,9 @@ app = Flask(__name__)
 @app.route('/', methods=['POST','GET'])
 def index():
     return render_template('index.html')
+@app.route('/view', methods=['POST','GET'])
+def viewSekre():
+    return render_template('isi.html')
 
 
 if __name__ == '__main__':
