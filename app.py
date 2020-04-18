@@ -1,5 +1,6 @@
-from flask import Flask, request, jsonify,session, render_template, redirect, url_for, flash
+from flask import Flask, request, jsonify,session, render_template, redirect, url_for, flash,abort
 import requests
+import os
 app = Flask(__name__)
 
 @app.route('/', methods=['POST','GET'])
@@ -23,5 +24,6 @@ def viewSekre():
 
 
 if __name__ == '__main__':
+    app.secret_key = os.urandom(12)
     # Threaded option to enable multiple instances for multiple user access support
     app.run(threaded=True, port=5000)
