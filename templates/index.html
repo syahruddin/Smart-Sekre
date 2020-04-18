@@ -4,7 +4,7 @@
         <title>Login</title>
    </head>
    <body style="background-color: #201e21">
-     <form action="/login" method="POST">
+     <form action="{{ request.path }}" method="POST">
       <input type="username" name="username" placeholder="Username">
       <input type="password" name="password" placeholder="Password">
       <input type="submit" value="Log in">

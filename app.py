@@ -4,18 +4,18 @@ app = Flask(__name__)
 
 @app.route('/', methods=['POST','GET'])
 def index():
-    if not session.get('logged_in'):
-        return render_template('index.html')
+    if request.methods == 'POST':
+        if request.form['password'] == 'kemahasiswaan' and request.form['username'] == 'lkitb':
+            session['logged_in'] = True
+        else:
+            flash('Username/Password Salah!')
+        return index()
     else:
-        return viewSekre()
+        if not session.get('logged_in'):
+            return render_template('index.html')
+        else:
+            return viewSekre()
 
-@app.route('/login',methods=['POST'])
-def login():
-    if request.form['password'] == 'kemahasiswaan' and request.form['username'] == 'lkitb':
-        session['logged_in'] = True
-    else:
-        flash('Username/Password Salah!')
-    return index()
 
 @app.route('/view', methods=['POST','GET'])
 def viewSekre():
