@@ -8,20 +8,23 @@ def index():
     if request.method == 'POST':
         if request.form['password'] == 'kemahasiswaan' and request.form['username'] == 'lkitb':
             session['logged_in'] = True
-            return index()
+            return redirect(url_for('index'))
         else:
             flash('Username/Password Salah!')
-            return index()
+            return redirect(url_for('index'))
     else:
         if not session.get('logged_in'):
             return render_template('index.html')
         else:
-            return viewSekre()
+            return redirect(url_for('view'))
 
 
 @app.route('/view', methods=['POST','GET'])
-def viewSekre():
+def view():
     return render_template('view.html')
+
+@app.route('/logout', methods=['POST','GET'])
+def logout():
 
 
 if __name__ == '__main__':
