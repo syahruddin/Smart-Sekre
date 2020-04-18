@@ -23,11 +23,15 @@ def index():
 
 @app.route('/view', methods=['POST','GET'])
 def view():
-    return render_template('view.html')
+    if request.method == 'GET':
+        return render_template('view.html')
+    else:
+        return redirect(url_for('logout'))
 
 @app.route('/logout', methods=['POST','GET'])
 def logout():
-    return 1
+    session['logged_in'] = False
+    return redirect(url_for('index'))
 
 
 if __name__ == '__main__':
