@@ -4,7 +4,7 @@ app = Flask(__name__)
 
 @app.route('/', methods=['POST','GET'])
 def index():
-    if request.methods == 'POST':
+    if request.method == 'POST':
         if request.form['password'] == 'kemahasiswaan' and request.form['username'] == 'lkitb':
             session['logged_in'] = True
         else:
