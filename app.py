@@ -25,6 +25,7 @@ def view():
 
 @app.route('/logout', methods=['POST','GET'])
 def logout():
+    return 1
 
 
 if __name__ == '__main__':
