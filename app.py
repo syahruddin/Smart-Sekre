@@ -2,7 +2,7 @@ from flask import Flask, request, jsonify,session, render_template, redirect, ur
 import requests
 import os
 app = Flask(__name__)
-
+app.secret_key = 'ha21j3nhhi08jhfd88'
 @app.route('/', methods=['POST','GET'])
 def index():
     if request.method == 'POST':
@@ -25,5 +25,5 @@ def viewSekre():
 
 
 if __name__ == '__main__':
-    app.secret_key = os.urandom(12)
+
     app.run(threaded=True, port=5000)
