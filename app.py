@@ -3,7 +3,7 @@ import requests
 import os
 app = Flask(__name__)
 app.secret_key = 'ha21j3nhhi08jhfd88'
-session['logged_in'] = False
+#session['logged_in'] = False
 
 @app.route('/', methods=['POST','GET'])
 def index():
