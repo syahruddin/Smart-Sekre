@@ -31,7 +31,7 @@ def view():
             data = requests.get(url).json()[1]
             code =""
             for i in data:
-                code = code +"<tr><td>"+i[1]+"</td><td>"+i[2]+"</td><td>"+i[3]+"</td></tr>"
+                code = code +"<tr><td>"+data[i][1]+"</td><td>"+data[i][2]+"</td><td>"+data[i][3]+"</td></tr>"
 
             return render_template('view.html',d = code)
         else:
