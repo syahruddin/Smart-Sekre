@@ -4,14 +4,14 @@
         <title>Pengawasan Sekre</title>
    </head>
    <body style="background-color: #00FFFF">
-     <div class="container">
-     <p>Contacts:</p>
-     <ul>
-     {% for r in d %}
-     <li>{{r}}</li>
-     {% endfor %}
-     </ul>
-     </div>
+     <table style="width:100%">
+      <tr>
+        <th>Nama Unit</th>
+        <th>Status Listrik</th>
+        <th>Status Pintu</th>
+      </tr>
+      {{d}}
+    </table>
      <p><a href="{{ url_for('logout') }}">logout</a></p>
    </body>
 </html>
