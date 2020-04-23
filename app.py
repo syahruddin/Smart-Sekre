@@ -28,7 +28,7 @@ def view():
     else:
         if request.method == 'GET':
             url = "https://apismartsekre.herokuapp.com/getstatus"
-            data = requests.get(url).json()[1]
+            data = requests.get(url).json()
             code =""
             for i in data:
                 code = code +"<tr><td>"+data[i][1]+"</td><td>"+data[i][2]+"</td><td>"+data[i][3]+"</td></tr>"
