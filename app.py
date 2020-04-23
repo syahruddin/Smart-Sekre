@@ -27,7 +27,7 @@ def view():
         return redirect(url_for('index'))
     else:
         if request.method == 'GET':
-            url = ""https://apismartsekre.herokuapp.com/getstatus"
+            url = "https://apismartsekre.herokuapp.com/getstatus"
             data = requests.get(url)
             return render_template('view.html',d = data)
         else:
