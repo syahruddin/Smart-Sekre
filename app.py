@@ -34,12 +34,12 @@ def view():
             for i in data:
                 temp = data[j]
                 code = code +"<tr><td>"+str(temp[1])+"</td><td>"
-                if str(tept[2]) == 'True':
+                if str(temp[2]) == 'True':
                     code+= "Terbuka"
                 else:
                     code+= "Tertutup"
                 code += "</td><td>"
-                if str(tept[3]) == 'True':
+                if str(temp[3]) == 'True':
                     code+= "Menyala"
                 else:
                     code+= "Mati"
