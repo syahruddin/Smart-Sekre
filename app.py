@@ -34,7 +34,7 @@ def view():
             for i in data:
                 code = code +"<tr><td>"+str(data[1])+"</td><td>"+str(data[2])+"</td><td>"+str(data[3])+"</td></tr>"
 
-            return render_template('view.html',d = code)
+            return render_template('view.html',d = Markup(code))
         else:
             return redirect(url_for('logout'))
 
