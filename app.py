@@ -33,7 +33,17 @@ def view():
             j = 0
             for i in data:
                 temp = data[j]
-                code = code +"<tr><td>"+str(temp[1])+"</td><td>"+str(temp[2])+"</td><td>"+str(temp[3])+"</td></tr>"
+                code = code +"<tr><td>"+str(temp[1])+"</td><td>"
+                if str(tept[2]) == 'True':
+                    code+= "Terbuka"
+                else:
+                    code+= "Tertutup"
+                code += "</td><td>"
+                if str(tept[3]) == 'True':
+                    code+= "Menyala"
+                else:
+                    code+= "Mati"
+                code += "</td></tr>"
                 j+=1
 
             return render_template('view.html',d = Markup(code))
